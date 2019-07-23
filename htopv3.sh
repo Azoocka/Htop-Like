@@ -43,7 +43,7 @@ case $choice in
     break
     ;;
     *)
-    echo " Ce choix n'est pas valide , merci de bien vouloir indiquer une valeur entre 0 et 3 : "
+    echo " Ce choix n'est pas valide , merci de bien vouloir indiquer une valeur entre 0 et 4 : "
     ;;
 esac
 done
