@@ -1,7 +1,9 @@
 #!/bin/bash
 
 while true; do 
+echo -e "\n"
 echo " Que souhaitez vous savoir ?"
+echo -e "\n"
 echo "1. La consommation de RAM en Mb"
 echo "2. La consommation de RAM en Gb"
 echo "3. La consommation de RAM en %"
@@ -9,7 +11,7 @@ echo "4. l'uptime de la machine"
 
 echo
 
-echo -n " Entrez votre choix ou bien appuyez sur la touche 0 pour quitter"
+echo -e " Entrez votre choix ou bien appuyez sur la touche 0 pour quitter \n"
 read choice
 echo
 
