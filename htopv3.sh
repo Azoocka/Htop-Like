@@ -20,13 +20,14 @@ case $choice in
         MemTotal=$(grep MemTotal /proc/meminfo | awk '{print $2}')
         MemFree=$(grep MemFree /proc/meminfo | awk '{print $2}')
         MemUse=$((($MemTotal-$MemFree)/1024))
-        echo "Votre Consommation est de $MemUse Mb"
+        echo "Votre Consommation est de $MemUse Mo"
     ;;
     2)
         MemTotal=$(grep MemTotal /proc/meminfo | awk '{print $2}')
         MemFree=$(grep MemFree /proc/meminfo | awk '{print $2}')
-        MemUse=$(((($MemTotal-$MemFree)/1024)/1024))
-        echo "Votre Consommation est de $MemUse Gb"
+        #MemUse=$(((($MemTotal-$MemFree)/1024)/1024))
+	MemUse=$(echo - | awk '{print (($MemTotal - $MemFree)/1024)/1024}')
+        echo "Votre Consommation est de $MemUse Go"
     ;;
     3)
 	MemTotal=$(grep MemTotal /proc/meminfo | awk '{print $2}')
