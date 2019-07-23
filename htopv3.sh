@@ -29,9 +29,14 @@ case $choice in
         echo "Votre Consommation est de $MemUse Gb"
     ;;
     3)
+	MemTotal=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+        MemFree=$(grep MemFree /proc/meminfo | awk '{print $2}')
+        MemUse=$(($MemTotal-$MemFree))
+        Percent=$((($MemUse * 100)/$MemTotal))
+        echo -e "Votre Consommation est de $Percent % \n"
     ;;
     4)
-        awk '{printf("%d:%02d:%02d:%02d\n",($1/60/60/24),($1/60/60%24),($1/60%60),($1%60))}' /proc/uptime
+        awk '{printf("Votre Machine est allumé depuis %d Jours - %02d Heures - %02d Minutes - %02d Secondes\n",($1/60/60/24),($1/60/60%24),($1/60%60),($1%60))}' /proc/uptime
     ;;
     0)
     echo " Très bien, à très bientöt !"
